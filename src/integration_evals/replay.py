@@ -1,7 +1,7 @@
 """Bounded diagnostic reruns preserve failed history and immutable execution inputs."""
 
 from datetime import datetime
-from typing import Final
+from typing import Final, assert_never
 
 from pydantic import Field
 
@@ -32,9 +32,13 @@ class Flake(Record):
 
 def run_history(prior: Run | tuple[Run, ...]) -> tuple[Run, ...]:
     """Keep original-only callers while requiring all ancestors for diagnostics."""
-    if isinstance(prior, Run):
-        return (prior,)
-    return prior
+    match prior:
+        case Run():
+            return (prior,)
+        case tuple():
+            return prior
+        case _:
+            assert_never(prior)
 
 
 def validate_history(history: tuple[Run, ...], suite: Suite) -> None:
