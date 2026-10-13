@@ -1,6 +1,8 @@
 [project]
 name = "integration-evals"
 version = "0.1.0"
+license = "MIT"
+license-files = ["LICENSE", "COPYRIGHT.md", "THIRD_PARTY_NOTICES.md"]
 description = "Pinned cross-component verification and honest evidence gates"
 requires-python = ">=3.13"
 dependencies = ["pydantic>=2.12,<3", "typer>=0.20,<1"]

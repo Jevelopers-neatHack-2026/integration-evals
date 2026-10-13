@@ -262,3 +262,9 @@ Follow [AGENTS.md](AGENTS.md) and the [organization contribution guidance](https
 
 No repository license file is present. Component packages and retained evidence keep
 their own provenance and applicable terms; do not infer a project-wide license.
+
+## License and attribution
+
+Original project code and technical documentation are licensed under the [MIT License](LICENSE).
+See [COPYRIGHT.md](COPYRIGHT.md) for Jevelopers team attribution, the exact scope,
+third-party obligations and unresolved asset rights.
