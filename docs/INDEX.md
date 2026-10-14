@@ -23,6 +23,7 @@ boundaries. A successful command or component test does not approve the product.
 | [Execution protocol](execution-protocol.md) | App-owned assembly, pinned components, isolation, owner observations, contract conformance and benchmark requirements. |
 | [Command reference](cli-reference.md) | All twelve implemented CLI commands, their options, output behavior and limits. |
 | [Evidence audit](evidence-audit.md) | Standard-library integrity checks and the distinction between byte custody and acceptance. |
+| [JUnit rendering](junit-reporting.md) | XML-compatible derivative reports without changing source evidence, outcomes or acceptance. |
 | [Evidence indexing and local reviews](evidence-index.md) | Requirement joins, review derivatives, image qualifications and persistent blockers. |
 | [Safe reruns](safe-reruns.md) | Rerun diagnostics, changed inputs and limits on release claims. |
 | [Retained runner](safe-reruns-runner.md) | Preserved history and replay procedures without executing commands from archive metadata. |
