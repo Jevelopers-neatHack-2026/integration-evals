@@ -54,11 +54,14 @@ def test_junit_renders_invalid_diagnostics_without_changing_records(
     before = result.model_dump()
     root = fromstring(junit((result,)))  # noqa: S314 - XML generated from synthetic records.
     diagnostic = root[0][0]
-    assert diagnostic.tag == {
-        Outcome.FAILED: "failure",
-        Outcome.ERROR: "error",
-        Outcome.SKIPPED: "skipped",
-    }[outcome]
+    assert (
+        diagnostic.tag
+        == {
+            Outcome.FAILED: "failure",
+            Outcome.ERROR: "error",
+            Outcome.SKIPPED: "skipped",
+        }[outcome]
+    )
     assert "\ufffd" in diagnostic.attrib["message"]
     assert result.model_dump() == before
 
