@@ -117,7 +117,7 @@ def _pattern_hit(data: bytes) -> bool:
 
 def _url_code(data: bytes) -> str | None:
     """Return the URL policy failure code for embedded URLs, if any."""
-    for match in re.finditer(rb"https?://[^\s\"<>]+", data):
+    for match in re.finditer(rb"https?://[^\s\"<>]+", data, flags=re.IGNORECASE):
         try:
             parsed = urlsplit(match.group().decode())
         except (UnicodeDecodeError, ValueError):
