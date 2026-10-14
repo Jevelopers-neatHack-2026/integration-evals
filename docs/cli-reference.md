@@ -66,16 +66,37 @@ owner responses and the complete evidence contract.
 | `--mode MODE` | `mock-only` by default. Other implemented values are `recorded`, `sandbox`, and `live`. Transport mode and evidence origin are distinct. |
 | `--output TEXT` | `reports/runs`; the command prints the resulting retained-report directory. |
 | `--authorize-paid` / `--no-authorize-paid` | False by default. Confirmation is subordinate to existing owner authority and budget; this flag grants neither. |
-| `--evaluation-diagnostics INTEGER` | Default `0`; allowed range `0` through `2`. Adds comparison-replay diagnostics from the captured inputs, not independent producer reruns. |
+| `--evaluation-diagnostics INTEGER` | Default `0`; allowed range `0` through `2`. Requests eligible comparison replays, not independent producer reruns. See the prerequisites below; a positive value can reject an otherwise retained run. |
 
 ```sh
 uv run integration-evals run --mode mock-only --output reports/runs
 uv run integration-evals run --manifest /approved/release.json --workspace /approved/workspace
 ```
 
-The command exits `2` if no cases are selected or any selected result is not
-`passed`. A written report, a replay, or a zero exit is not a blanket acceptance
-statement: inspect release-audit and evidence blockers and retain owner boundaries.
+After execution, report writing and any requested diagnostics complete, `run`
+exits `2` if any selected result is not `passed`. An empty suite or explicitly empty
+manifest selection is rejected with exit `1` before a run report is produced; omitting
+the manifest selection selects all suite cases. See the nonempty constraints in
+[`models.py`](../src/integration_evals/models.py) and selection in
+[`runner.py`](../src/integration_evals/runner.py).
+
+`--evaluation-diagnostics` is not a general repeat count. Every selected result must
+be an eligible `mock-only` or `recorded` functional `oracle-mismatch` failure with
+`recorded-comparison` evidence, successful original cleanup and a matching captured
+comparison. Safety/authorization, ambiguous, quarantined, provider-operation and
+other forbidden cases are excluded. The runtime, capture identities and hashes must
+still match, and the diagnostic limit must not be exceeded. The complete checks are
+in [`diagnostics.py`](../src/integration_evals/diagnostics.py) and
+[`replay.py`](../src/integration_evals/replay.py).
+
+A passed, skipped, errored, uncaptured or otherwise ineligible selection is rejected
+rather than silently skipped. `run` saves the original history and release audit
+before trying diagnostics. A diagnostic rejection exits `1` before printing the
+final report directory and can leave only those original reports; it does not roll
+them back or establish a completed replay.
+
+A written report, a replay, or a zero exit is not a blanket acceptance statement:
+inspect release-audit and evidence blockers and retain owner boundaries.
 Sandbox/live execution requires the current authority, eligibility, credentials,
 caps, permitted operations and cleanup described in the protocol. No credentials
 are inferred from a fixture, hash, manifest, or successful local check.
@@ -104,7 +125,7 @@ to changed package bytes or runtime binaries.
 
 | Command | Inputs and options | Writes and exit behavior |
 | --- | --- | --- |
-| `replay-evaluation ARCHIVE` | Retained archive; optional `--suite PATH`, default `scenarios/suite.json`. | Loads hash-bound captured comparisons, reruns evaluator comparisons, and writes a successor history and release audit beside the retained archive. Always exits `2`: replay does not become fresh producer execution or source-authenticity proof. |
+| `replay-evaluation ARCHIVE` | Retained archive; optional `--suite PATH`, default `scenarios/suite.json`. | Loads hash-bound captured comparisons, reruns evaluator comparisons, and writes a successor history and release audit beside the retained archive. A completed replay deliberately exits `2`; handled invalid/missing input, drift, ineligible captures or I/O failures exit `1` instead. Exit `1` is not a completed replay and may leave partial output if a later write fails. Replay does not become fresh producer execution or source-authenticity proof. |
 | `history-report ARCHIVE` | Retained archive; optional `--suite PATH`, default `scenarios/suite.json`. | Reads complete retained history and prints JSON summaries. Executes no command taken from archive metadata. Exits `2` when any summary remains release-blocked. |
 | `evidence-index ARCHIVE` | Required `--output PATH`; optional `--suite PATH` and `--reviews PATH`. | Joins history to the current repository's master/local requirements and optional review sidecars. Writes a new, exclusive output file and prints its SHA-256. Exits `2` for in-scope blockers; missing reviews are not silently treated as approval. |
 
@@ -133,8 +154,18 @@ Use an isolated working copy, inspect the diff, and preserve historical inputs.
 
 | Command | Required positional arguments | Mutation boundary |
 | --- | --- | --- |
-| `initialize REPOSITORY BACKLOG` | Destination repository and externally captured backlog file. | Creates fixture/benchmark directories, imports the local requirement inventory, and generates synthetic fixture/catalog and benchmark inputs. This is initialization, not GitHub discovery, acceptance synchronization, or read-only validation. It can replace generated inputs. |
+| `initialize REPOSITORY BACKLOG` | Prepared checkout and externally captured backlog file. | Requires the repository and `planning/` directory plus all expected reviewed `fixtures/data/*.txt` inputs. Rebuilds the catalog and hashes from those existing bytes; does not create the fixture text. Replaces `planning/requirements.json`, `fixtures/catalog.json` and `benchmarks/corpus.json` as their steps succeed. Not atomic: a later failure can leave earlier writes in place. |
 | `schemas DESTINATION` | Destination directory. | Creates the directory and rewrites the evaluator-owned JSON Schema files generated from Python models. Existing files at those generated paths are overwritten. It does not generate or replace the shared product contracts. |
+
+For `initialize`, [`specifications.py`](../src/integration_evals/specifications.py)
+defines the ten expected fixture families, each with positive and negative input
+files. Use only the prepared, reviewed synthetic inputs in an isolated checkout;
+do not substitute customer data or create arbitrary empty files to satisfy missing
+paths. The command imports requirements before reading every fixture: missing
+fixture bytes can therefore cause exit `1` after `planning/requirements.json` was
+already replaced. Inspect and restore the disposable working copy after a failure.
+This command is not GitHub discovery, acceptance synchronization or read-only
+validation, and must not be run as routine onboarding against retained evidence.
 
 The schema exporter currently covers 27 evaluator model types. The exporter source
 is authoritative for that list; a matching schema file is not proof that an input
