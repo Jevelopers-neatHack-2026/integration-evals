@@ -1,0 +1,200 @@
+name: Temporary public documentation source capture
+on:
+  push:
+    branches: [chore/docs-source-capture-20261013]
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Capture allowlisted public source without executing it
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CAPTURE_OUT: ${{ runner.temp }}/doc-capture
+        run: |
+          python3 - <<'PYTHON'
+          """Read-only capture of explicitly allowlisted public GitHub source trees.
+
+          No source code, dependency installation, hooks, or provider operations are executed.
+          The output excludes binary files, symlinks, third-party directories and real env files.
+          """
+          from __future__ import annotations
+          import concurrent.futures
+          import datetime
+          import hashlib
+          import json
+          import os
+          from pathlib import Path, PurePosixPath
+          import subprocess
+          import tempfile
+          import urllib.request
+
+          ORG = "Jevelopers-neatHack-2026"
+          REPOS = (".github", "shared-contracts", "agent-harness", "event-intelligence",
+                   "creative-engine", "print-production", "fulfillment-connectors",
+                   "cost-intelligence", "integration-evals", "getticketstub.com",
+                   "team-dashboard", "brand-kit", "marketing-material")
+          PRIOR = "6afc9833b9c498849cb2cc3f049217e4ba26402c"
+          OUT = Path(os.environ.get("CAPTURE_OUT", "capture")).resolve()
+          MAX_FILE = 5 * 1024 * 1024
+          MAX_REPO = 100 * 1024 * 1024
+          SAFE_ENV_SUFFIXES = (".example", ".sample", ".template")
+          EXCLUDED_PARTS = {".git", "node_modules", ".next", ".venv", "venv", "vendor", "vendored", "dist", "build"}
+          TEXT_EXT = {".md", ".mdx", ".rst", ".adoc", ".asciidoc", ".txt", ".json", ".jsonl",
+                      ".yaml", ".yml", ".toml", ".ini", ".cfg", ".conf", ".ts", ".tsx", ".js",
+                      ".mjs", ".cjs", ".jsx", ".py", ".sh", ".bash", ".sql", ".css", ".scss",
+                      ".html", ".htm", ".xml", ".svg", ".graphql", ".gql", ".proto", ".lock", ".csv"}
+          NAMES = {"Dockerfile", "Makefile", "LICENSE", "NOTICE", "COPYING", "CONTRIBUTING", "SECURITY", "SUPPORT", "CODEOWNERS"}
+          ENV = {k: v for k, v in os.environ.items() if k not in {"GH_TOKEN", "GITHUB_TOKEN"}}
+          ENV.update({"GIT_TERMINAL_PROMPT": "0", "GIT_CONFIG_NOSYSTEM": "1", "GIT_CONFIG_GLOBAL": "/dev/null"})
+
+          def api(path: str):
+              if not path.startswith(f"/repos/{ORG}/"):
+                  raise ValueError("API outside repository allowlist")
+              headers = {"Accept": "application/vnd.github+json", "User-Agent": "ticketstub-readonly-doc-audit"}
+              token = os.environ.get("GH_TOKEN")
+              if token:
+                  headers["Authorization"] = "Bearer " + token
+              with urllib.request.urlopen(urllib.request.Request("https://api.github.com" + path, headers=headers), timeout=30) as r:
+                  data = r.read(15 * 1024 * 1024 + 1)
+              if len(data) > 15 * 1024 * 1024:
+                  raise ValueError("API response exceeded bound")
+              return json.loads(data)
+
+          def git(directory: Path, *args: str) -> bytes:
+              p = subprocess.run(["git", "-c", "core.hooksPath=/dev/null", "-C", str(directory), *args],
+                                 env=ENV, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=120, check=False)
+              if p.returncode:
+                  raise RuntimeError(f"git {args[0]} failed with exit {p.returncode}; stderr deliberately not copied")
+              return p.stdout
+
+          def write_json(path: Path, value):
+              path.parent.mkdir(parents=True, exist_ok=True)
+              path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+          def allowed(path: str, mode: str, size: int) -> tuple[bool, str]:
+              p = PurePosixPath(path)
+              if p.is_absolute() or any(part in {".", "..", ""} for part in p.parts) or "\\" in path:
+                  return False, "unsafe-path"
+              if mode not in {"100644", "100755"}:
+                  return False, "non-regular-file"
+              if any(part in EXCLUDED_PARTS for part in p.parts):
+                  return False, "dependency-or-build-directory"
+              if p.name.startswith(".env") and not p.name.endswith(SAFE_ENV_SUFFIXES):
+                  return False, "environment-file"
+              if p.suffix.lower() in {".pem", ".key", ".p12", ".pfx", ".ttf", ".otf", ".woff", ".woff2"}:
+                  return False, "credential-or-font-file"
+              if size > MAX_FILE:
+                  return False, "size-bound"
+              if p.suffix.lower() not in TEXT_EXT and p.name not in NAMES and not p.name.startswith("."):
+                  return False, "not-selected-text-format"
+              return True, "selected-text"
+
+          def capture_tree(bare: Path, sha: str, destination: Path):
+              entries = []
+              total = 0
+              raw = git(bare, "ls-tree", "-r", "-z", "-l", sha)
+              for record in raw.split(b"\0"):
+                  if not record:
+                      continue
+                  header, raw_path = record.split(b"\t", 1)
+                  mode, kind, blob, size_raw = header.decode("ascii").split()
+                  path = raw_path.decode("utf-8")
+                  size = int(size_raw) if size_raw != "-" else 0
+                  yes, reason = allowed(path, mode, size)
+                  row = {"path": path, "mode": mode, "type": kind, "blob": blob, "size": size,
+                         "captured": False, "disposition": reason}
+                  if yes and kind == "blob":
+                      value = git(bare, "cat-file", "blob", blob)
+                      expected = hashlib.sha1(b"blob " + str(len(value)).encode() + b"\0" + value).hexdigest()
+                      if expected != blob or len(value) != size:
+                          raise ValueError("Git blob custody mismatch")
+                      try:
+                          value.decode("utf-8")
+                      except UnicodeDecodeError:
+                          row["disposition"] = "non-utf8"
+                      else:
+                          if b"\0" in value:
+                              row["disposition"] = "binary-nul"
+                          elif total + size > MAX_REPO:
+                              raise ValueError("Repository text byte bound exceeded")
+                          else:
+                              target = destination / path
+                              target.parent.mkdir(parents=True, exist_ok=True)
+                              target.write_bytes(value)
+                              total += size
+                              row.update(captured=True, sha256=hashlib.sha256(value).hexdigest())
+                  entries.append(row)
+              write_json(destination.parent / (destination.name + "-tree.json"), {"revision": sha, "entries": entries,
+                         "text_bytes": total, "captured_files": sum(x["captured"] for x in entries)})
+              return entries
+
+          def one(repo: str):
+              metadata = api(f"/repos/{ORG}/{repo}")
+              if metadata.get("full_name") != f"{ORG}/{repo}" or metadata.get("archived") is not False or metadata.get("private") is not False:
+                  raise ValueError(f"{repo}: not the allowlisted active public repository")
+              branch = metadata["default_branch"]
+              branch_meta = api(f"/repos/{ORG}/{repo}/branches/{urllib.parse.quote(branch, safe='')}")
+              sha = branch_meta["commit"]["sha"]
+              summary = {k: metadata.get(k) for k in ("id", "full_name", "default_branch", "archived", "private", "visibility", "html_url")}
+              summary.update(revision=sha, tree=branch_meta["commit"]["commit"]["tree"]["sha"],
+                             protected=branch_meta.get("protected"), observed_at=datetime.datetime.now(datetime.timezone.utc).isoformat())
+              open_prs = []
+              for page in range(1, 11):
+                  values = api(f"/repos/{ORG}/{repo}/pulls?state=open&per_page=100&page={page}")
+                  open_prs.extend({k: pr.get(k) for k in ("number", "title", "html_url", "state", "draft", "updated_at", "body")}
+                                 | {"head_sha": pr["head"]["sha"], "head_ref": pr["head"]["ref"],
+                                    "base_sha": pr["base"]["sha"], "base_ref": pr["base"]["ref"]} for pr in values)
+                  if len(values) < 100:
+                      break
+              else:
+                  raise ValueError("PR pagination exceeded bound")
+              write_json(OUT / "metadata" / f"{repo}.json", summary | {"open_prs": open_prs})
+              with tempfile.TemporaryDirectory(prefix="doc-capture-") as d:
+                  bare = Path(d)
+                  git(bare, "init", "--bare")
+                  git(bare, "fetch", "--depth=1", "--no-tags", f"https://github.com/{ORG}/{repo}.git", sha)
+                  rows = capture_tree(bare, sha, OUT / "repositories" / repo)
+                  summary["tracked_files"] = len(rows)
+                  summary["captured_text_files"] = sum(r["captured"] for r in rows)
+                  if repo == ".github":
+                      git(bare, "fetch", "--depth=1", "--no-tags", f"https://github.com/{ORG}/{repo}.git", PRIOR)
+                      for path in ("docs/documentation/inventory.json", "docs/documentation/AUDIT-2026-10-12.md", "docs/documentation/INDEX.md", "standards/documentation.md"):
+                          value = git(bare, "show", f"{PRIOR}:{path}")
+                          target = OUT / "prior-unmerged-audit" / path
+                          target.parent.mkdir(parents=True, exist_ok=True)
+                          target.write_bytes(value)
+              print(f"{repo}: {len(rows)} tracked files; {summary['captured_text_files']} selected text files", flush=True)
+              return summary
+
+          def main():
+              OUT.mkdir(parents=True, exist_ok=True)
+              results, errors = [], []
+              with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+                  tasks = {pool.submit(one, repo): repo for repo in REPOS}
+                  for future in concurrent.futures.as_completed(tasks):
+                      try:
+                          results.append(future.result())
+                      except Exception as exc:
+                          errors.append({"repo": tasks[future], "type": type(exc).__name__, "error": str(exc)[:300]})
+              write_json(OUT / "capture.json", {"schema": "ticketstub-public-doc-source-capture/1", "repositories": sorted(results, key=lambda x: x["full_name"]),
+                         "errors": errors, "private_repositories": "excluded", "archived_repositories": "excluded",
+                         "source_code_executed": False, "prior_audit": {"revision": PRIOR, "state": "unmerged candidate; historical evidence, not newly validated"}})
+              files = sorted(p for p in OUT.rglob("*") if p.is_file())
+              (OUT / "SHA256SUMS").write_text("".join(hashlib.sha256(p.read_bytes()).hexdigest() + "  " + p.relative_to(OUT).as_posix() + "\n" for p in files), encoding="utf-8")
+              if errors:
+                  raise SystemExit(1)
+
+          if __name__ == "__main__":
+              main()
+          PYTHON
+      - name: Preserve source custody and collection failures
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: public-doc-source-capture
+          path: ${{ runner.temp }}/doc-capture
+          retention-days: 7
+          if-no-files-found: error
