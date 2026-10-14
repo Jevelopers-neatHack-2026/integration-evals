@@ -29,3 +29,5 @@ The [Architecture Kit v1.0](https://github.com/Jevelopers-neatHack-2026/getticke
 ## Contributor handoff
 
 Use the repository [acceptance view](ACCEPTANCE.md), the pinned master checklist, and the central implementation plan. Preserve acceptance authority and owner roles. Follow the [organization contribution guidance](https://github.com/Jevelopers-neatHack-2026/.github/blob/main/CONTRIBUTING.md); use only synthetic or approved fixtures and publish only sanitized evidence. Never fabricate component pins or financial outcomes.
+
+For supported evaluator commands, output and exit behavior, and component runbooks, use the [documentation index](../INDEX.md) and [CLI reference](../cli-reference.md). Initialization and schema-export commands regenerate files; they are not read-only evidence checks.
