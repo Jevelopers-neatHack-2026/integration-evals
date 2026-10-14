@@ -1,10 +1,11 @@
 """Immutable JSON, JUnit and human receipts without automatic tracker promotion."""
 
 import json
+import re
 from decimal import Decimal
 from io import BytesIO
 from pathlib import Path
-from typing import Literal
+from typing import Final, Literal
 from xml.etree.ElementTree import Element, ElementTree, SubElement
 
 from pydantic import Field
@@ -40,6 +41,12 @@ __all__ = [
     "save_run",
     "save_snapshot",
 ]
+
+
+# XML 1.0 Fifth Edition, section 2.2 (Char); keep all permitted Unicode.
+_INVALID_XML_CHARACTERS: Final = re.compile(
+    r"[^\x09\x0A\x0D\x20-\uD7FF\uE000-\uFFFD\U00010000-\U0010FFFF]"
+)
 
 
 class CoverageRow(Record):
@@ -109,6 +116,11 @@ def coverage(run: Run | History, tracker: Tracker) -> tuple[CoverageRow, ...]:
     return tuple(rows)
 
 
+def _xml_text(value: str) -> str:
+    """Replace XML-forbidden characters only in the rendered JUnit derivative."""
+    return _INVALID_XML_CHARACTERS.sub("\ufffd", value)
+
+
 def junit(results: tuple[CaseResult, ...]) -> bytes:
     """Emit skipped blockers distinctly from failures in CI test reports."""
     root = Element(
@@ -119,10 +131,14 @@ def junit(results: tuple[CaseResult, ...]) -> bytes:
         skipped=str(sum(r.outcome is Outcome.SKIPPED for r in results)),
     )
     for result in results:
-        case = SubElement(root, "testcase", name=result.case_id, time=str(result.duration_seconds))
+        case = SubElement(
+            root, "testcase", name=_xml_text(result.case_id), time=str(result.duration_seconds)
+        )
         if result.outcome is not Outcome.PASSED:
             tag = {Outcome.SKIPPED: "skipped", Outcome.FAILED: "failure", Outcome.ERROR: "error"}
-            _ = SubElement(case, tag[result.outcome], message=result.reason or result.outcome.value)
+            _ = SubElement(
+                case, tag[result.outcome], message=_xml_text(result.reason or result.outcome.value)
+            )
     output = BytesIO()
     ElementTree(root).write(output, encoding="utf-8", xml_declaration=True)
     return output.getvalue()
