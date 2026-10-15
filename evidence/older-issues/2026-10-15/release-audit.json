@@ -1,0 +1,1374 @@
+{
+  "schema_version": "1.0",
+  "integration_revision": "347bad0e9b4117f448653cd6d71bd0687a75edc6",
+  "run_id": "run-69ed618cd38544349955ac573ed2e437",
+  "tooling_readiness": "partial",
+  "product_acceptance": "blocked",
+  "obligations": [
+    {
+      "id": "IE-12.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/22",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-12.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/22",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-12.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/22",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-12.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/22",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-12.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/22",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-12.AC6",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/22",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-12.AC7",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/22",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-09B.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/21",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-09B.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/21",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-09B.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/21",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-09B.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/21",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-08.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-08.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20",
+      "state": "blocked",
+      "cases": [
+        "sponsor-artifacts"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-08.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20",
+      "state": "blocked",
+      "cases": [
+        "sponsor-artifacts"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-08.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-08.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20",
+      "state": "blocked",
+      "cases": [
+        "sponsor-artifacts"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-11B.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/19",
+      "state": "blocked",
+      "cases": [
+        "wrong-tenant"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-11B.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/19",
+      "state": "blocked",
+      "cases": [
+        "stale-approval"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-11B.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/19",
+      "state": "blocked",
+      "cases": [
+        "hostile-asset"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-11B.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/19",
+      "state": "blocked",
+      "cases": [
+        "export-canaries"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-11B.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/19",
+      "state": "blocked",
+      "cases": [
+        "revocation"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-11A.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/18",
+      "state": "blocked",
+      "cases": [
+        "ssrf-egress"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-11A.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/18",
+      "state": "blocked",
+      "cases": [
+        "ssrf-egress"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-11A.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/18",
+      "state": "blocked",
+      "cases": [
+        "prompt-injection"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-11A.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/18",
+      "state": "blocked",
+      "cases": [
+        "ssrf-egress",
+        "prompt-injection"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-07.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/17",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-07.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/17",
+      "state": "blocked",
+      "cases": [
+        "image-generation-edit"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-07.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/17",
+      "state": "blocked",
+      "cases": [
+        "image-failure"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-07.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/17",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-07.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/17",
+      "state": "blocked",
+      "cases": [
+        "image-generation-edit"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-06B.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/16",
+      "state": "blocked",
+      "cases": [
+        "jev-held-out-comparison"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-06B.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/16",
+      "state": "blocked",
+      "cases": [
+        "jev-held-out-comparison"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-06B.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/16",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-06B.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/16",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-06B.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/16",
+      "state": "blocked",
+      "cases": [
+        "jev-held-out-comparison"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-06A.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/15",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-06A.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/15",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-06A.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/15",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-06A.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/15",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-06A.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/15",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-05D.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/14",
+      "state": "blocked",
+      "cases": [
+        "print-preflight",
+        "print-invalid"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05D.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/14",
+      "state": "blocked",
+      "cases": [
+        "quote-only",
+        "authorization-mutation"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05D.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/14",
+      "state": "blocked",
+      "cases": [
+        "invoice-coverage",
+        "subcent",
+        "allocation",
+        "classification",
+        "mode-isolation"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05D.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/14",
+      "state": "blocked",
+      "cases": [
+        "dashboard-totals",
+        "dashboard-authority"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05D.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/14",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-05C.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/13",
+      "state": "blocked",
+      "cases": [
+        "ambiguous-send",
+        "restart-after-external-success"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05C.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/13",
+      "state": "blocked",
+      "cases": [
+        "transport-redelivery",
+        "billable-retry",
+        "user-reissue"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05C.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/13",
+      "state": "blocked",
+      "cases": [
+        "publication-loss"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05C.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/13",
+      "state": "blocked",
+      "cases": [
+        "reconciliation"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05C.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/13",
+      "state": "blocked",
+      "cases": [
+        "supplier-ambiguity"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05B.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/12",
+      "state": "blocked",
+      "cases": [
+        "jev-malformed"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05B.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/12",
+      "state": "blocked",
+      "cases": [
+        "bounded-recovery"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05B.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/12",
+      "state": "blocked",
+      "cases": [
+        "research-conflicts"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05B.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/12",
+      "state": "blocked",
+      "cases": [
+        "research-conflicts"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05B.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/12",
+      "state": "blocked",
+      "cases": [
+        "jev-malformed"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05A.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/11",
+      "state": "blocked",
+      "cases": [
+        "restart-before-send",
+        "restart-after-checkpoint",
+        "restart-after-external-success"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05A.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/11",
+      "state": "blocked",
+      "cases": [
+        "duplicate-worker-race"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05A.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/11",
+      "state": "blocked",
+      "cases": [
+        "cancel-before-send",
+        "cancel-in-flight"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05A.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/11",
+      "state": "blocked",
+      "cases": [
+        "budget-contention",
+        "design-head-contention"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-05A.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/11",
+      "state": "blocked",
+      "cases": [
+        "bounded-recovery"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-04.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/10",
+      "state": "blocked",
+      "cases": [
+        "happy-path"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-04.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/10",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-04.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/10",
+      "state": "blocked",
+      "cases": [
+        "happy-path"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-04.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/10",
+      "state": "blocked",
+      "cases": [
+        "happy-path"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-04.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/10",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-10.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/9",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-10.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/9",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-10.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/9",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-10.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/9",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-10.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/9",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-09A.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/8",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-09A.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/8",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-09A.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/8",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-09A.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/8",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-09A.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/8",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-03B.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/7",
+      "state": "blocked",
+      "cases": [
+        "wrong-tenant"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-03B.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/7",
+      "state": "blocked",
+      "cases": [
+        "stale-approval"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-03B.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/7",
+      "state": "blocked",
+      "cases": [
+        "wrong-tenant"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-03B.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/7",
+      "state": "blocked",
+      "cases": [
+        "wrong-tenant"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-03A.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6",
+      "state": "blocked",
+      "cases": [
+        "canonical-conformance"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-03A.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6",
+      "state": "blocked",
+      "cases": [
+        "canonical-conformance"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-03A.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6",
+      "state": "blocked",
+      "cases": [
+        "canonical-conformance"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-03A.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6",
+      "state": "blocked",
+      "cases": [
+        "canonical-conformance"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-03A.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6",
+      "state": "blocked",
+      "cases": [
+        "canonical-conformance"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-03A.AC6",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6",
+      "state": "blocked",
+      "cases": [
+        "canonical-conformance"
+      ],
+      "owner": "getticketstub.com",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "IE-02B.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/5",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-02B.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/5",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-02B.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/5",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-02B.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/5",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-02B.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/5",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-02A.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/4",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-02A.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/4",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-02A.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/4",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-02A.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/4",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-01.AC1",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/3",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-01.AC2",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/3",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-01.AC3",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/3",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-01.AC4",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/3",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "IE-01.AC5",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/3",
+      "state": "blocked",
+      "cases": [],
+      "owner": "repository reviewer",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "ARC-01",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/1",
+      "state": "blocked",
+      "cases": [],
+      "owner": "Product and frontend",
+      "next_action": "no-executed-boundary"
+    },
+    {
+      "id": "ARC-02",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/1",
+      "state": "blocked",
+      "cases": [
+        "wrong-tenant"
+      ],
+      "owner": "Product and frontend",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "CON-01",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/shared-contracts/issues/1",
+      "state": "blocked",
+      "cases": [
+        "canonical-conformance"
+      ],
+      "owner": "Agent and research",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "CON-02",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/shared-contracts/issues/1",
+      "state": "blocked",
+      "cases": [
+        "user-reissue",
+        "wrong-tenant",
+        "stale-approval"
+      ],
+      "owner": "Agent and research",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "CON-03",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/shared-contracts/issues/1",
+      "state": "blocked",
+      "cases": [
+        "jev-malformed",
+        "prompt-injection",
+        "canonical-conformance"
+      ],
+      "owner": "Agent and research",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "AGT-01",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/event-intelligence/issues/1",
+      "state": "blocked",
+      "cases": [
+        "happy-path",
+        "research-conflicts"
+      ],
+      "owner": "Agent and research",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "AGT-02",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/agent-harness/issues/1",
+      "state": "blocked",
+      "cases": [
+        "restart-before-send",
+        "restart-after-checkpoint",
+        "restart-after-external-success",
+        "duplicate-worker-race"
+      ],
+      "owner": "Agent and research",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "AGT-03",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/agent-harness/issues/1",
+      "state": "blocked",
+      "cases": [
+        "ambiguous-send",
+        "bounded-recovery"
+      ],
+      "owner": "Agent and research",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "AGT-04",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/agent-harness/issues/1",
+      "state": "blocked",
+      "cases": [
+        "prompt-injection"
+      ],
+      "owner": "Agent and research",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "AGT-05",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/event-intelligence/issues/1",
+      "state": "blocked",
+      "cases": [
+        "ssrf-egress"
+      ],
+      "owner": "Agent and research",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "ART-01",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/creative-engine/issues/1",
+      "state": "blocked",
+      "cases": [
+        "happy-path",
+        "design-head-contention",
+        "image-generation-edit"
+      ],
+      "owner": "Creative and fulfillment",
+      "next_action": "app-owned composed release manifest unavailable; gpt-image-generation-edit-chain-missing"
+    },
+    {
+      "id": "ART-02",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/1",
+      "state": "blocked",
+      "cases": [
+        "happy-path",
+        "stale-approval"
+      ],
+      "owner": "Product and frontend",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "ART-03",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/print-production/issues/1",
+      "state": "blocked",
+      "cases": [
+        "print-preflight"
+      ],
+      "owner": "Creative and fulfillment",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "ART-04",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/print-production/issues/1",
+      "state": "blocked",
+      "cases": [
+        "print-preflight",
+        "print-invalid"
+      ],
+      "owner": "Creative and fulfillment",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "ART-05",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/event-intelligence/issues/1",
+      "state": "blocked",
+      "cases": [
+        "hostile-asset",
+        "revocation"
+      ],
+      "owner": "Creative and fulfillment",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FUL-01",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/fulfillment-connectors/issues/1",
+      "state": "blocked",
+      "cases": [
+        "quote-only"
+      ],
+      "owner": "Creative and fulfillment",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FUL-02",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/fulfillment-connectors/issues/1",
+      "state": "blocked",
+      "cases": [
+        "authorization-mutation"
+      ],
+      "owner": "Creative and fulfillment",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FUL-03",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/fulfillment-connectors/issues/1",
+      "state": "blocked",
+      "cases": [
+        "supplier-ambiguity"
+      ],
+      "owner": "Creative and fulfillment",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FUL-04",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/fulfillment-connectors/issues/1",
+      "state": "blocked",
+      "cases": [
+        "supplier-ambiguity"
+      ],
+      "owner": "Creative and fulfillment",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FIN-01",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+      "state": "blocked",
+      "cases": [
+        "transport-redelivery",
+        "publication-loss"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FIN-02",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+      "state": "blocked",
+      "cases": [
+        "transport-redelivery",
+        "publication-loss"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FIN-03",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+      "state": "blocked",
+      "cases": [
+        "billable-retry"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FIN-04",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+      "state": "blocked",
+      "cases": [
+        "ambiguous-send"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FIN-05",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+      "state": "blocked",
+      "cases": [
+        "reconciliation"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FIN-06",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+      "state": "blocked",
+      "cases": [
+        "invoice-coverage"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FIN-07",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+      "state": "blocked",
+      "cases": [
+        "subcent"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FIN-08",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/2",
+      "state": "blocked",
+      "cases": [
+        "allocation"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FIN-09",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/2",
+      "state": "blocked",
+      "cases": [
+        "classification"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "FIN-10",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/2",
+      "state": "blocked",
+      "cases": [
+        "mode-isolation"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "BUD-01",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+      "state": "blocked",
+      "cases": [
+        "budget-contention"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "BUD-02",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+      "state": "blocked",
+      "cases": [
+        "budget-contention"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "BUD-03",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+      "state": "blocked",
+      "cases": [
+        "ambiguous-send",
+        "cancel-in-flight"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "DASH-01",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/team-dashboard/issues/1",
+      "state": "blocked",
+      "cases": [
+        "dashboard-totals"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "DASH-02",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/team-dashboard/issues/1",
+      "state": "blocked",
+      "cases": [
+        "dashboard-totals"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "DASH-03",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/1",
+      "state": "blocked",
+      "cases": [
+        "dashboard-authority"
+      ],
+      "owner": "Product and frontend",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "DASH-04",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/2",
+      "state": "blocked",
+      "cases": [
+        "dashboard-totals"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "EVAL-01",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/1",
+      "state": "blocked",
+      "cases": [
+        "happy-path"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "EVAL-02",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/1",
+      "state": "blocked",
+      "cases": [
+        "jev-held-out-comparison"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "EVAL-03",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/marketing-material/issues/1",
+      "state": "blocked",
+      "cases": [
+        "sponsor-artifacts"
+      ],
+      "owner": "Product and frontend",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "EVAL-04",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/1",
+      "state": "blocked",
+      "cases": [
+        "revocation",
+        "export-canaries"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "SPN-01",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/agent-harness/issues/1",
+      "state": "blocked",
+      "cases": [
+        "sponsor-artifacts"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "SPN-02",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/agent-harness/issues/1",
+      "state": "blocked",
+      "cases": [
+        "sponsor-artifacts"
+      ],
+      "owner": "Agent and research",
+      "next_action": "app-owned composed release manifest unavailable"
+    },
+    {
+      "id": "SPN-03",
+      "issue": "https://github.com/Jevelopers-neatHack-2026/marketing-material/issues/1",
+      "state": "blocked",
+      "cases": [
+        "sponsor-artifacts"
+      ],
+      "owner": "Finance and reliability",
+      "next_action": "app-owned composed release manifest unavailable"
+    }
+  ],
+  "exclusions": [
+    "BUD-04",
+    "LIVE-01",
+    "LIVE-02",
+    "LIVE-03"
+  ],
+  "run_digest": "38888bca6357718c066d364dcd3fa55c14a4d433d4f86690d1037fb62d08cb73",
+  "limitations": [
+    "No canonical contract package or app release manifest has been supplied.",
+    "Synthetic smoke corpus is not a ratified held-out evaluation.",
+    "Sponsor/provider artifacts and their owner reviews remain required."
+  ]
+}

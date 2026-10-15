@@ -1,0 +1,1376 @@
+{
+  "schema_version": "1.0",
+  "kind": "implementation-handoff-not-acceptance",
+  "repository": "Jevelopers-neatHack-2026/integration-evals",
+  "cutoff_inclusive": "2026-10-13T05:38:56Z",
+  "queue_sha256": "9a145d6b8d329fea4c8019ab9b2c8474b76dbf8c45ae8da5d4d185ed5ccbb4ee",
+  "starting_revision": "aecb8e0a114e2e2d08134b1817fa0eee0d23dc6f",
+  "implementation_revision": "347bad0e9b4117f448653cd6d71bd0687a75edc6",
+  "implementation_tree": "4de6470851e0e89e2e3fccd65b986ba7e2820217",
+  "branch": "fix/eligible-acceptance-20261015",
+  "pull_request": "https://github.com/Jevelopers-neatHack-2026/integration-evals/pull/66",
+  "runtime": {
+    "agent": "Codex GPT-6 family per session instructions",
+    "exact_model_id": "not exposed",
+    "effort": "not exposed",
+    "billing_usage": "unknown",
+    "python": "3.13.9",
+    "platform": "macOS",
+    "provider_calls": "none"
+  },
+  "validation": {
+    "native_pytest": {
+      "tests": 764,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 19
+    },
+    "native_pytest_command": "UV_CACHE_DIR=/tmp/integration-evals-uv uv run pytest -q --tb=short --junitxml=/tmp/integration-evals-final.xml",
+    "native_pytest_log_sha256": "0e0a612448e265351d0ac8efc90205d878c0fa080acc5b61cad12087c7a9b9a6",
+    "focused_tests": 38,
+    "regressions_added": 25,
+    "initial_restricted_baseline": {
+      "passed": 642,
+      "failed": 61,
+      "skipped": 19,
+      "reason": "nested native containment unavailable under outer sandbox; preserved, not passes"
+    },
+    "intermediate_native_run": {
+      "passed": 712,
+      "failed": 0,
+      "skipped": 19,
+      "qualification": "before final catalog/registry regressions; not final-candidate evidence"
+    },
+    "static_checks": "package and stdlib basedpyright, ruff check and package format check passed",
+    "catalog_validation": "20 fixtures / 42 scenarios, promotion blocked",
+    "clean_product_diagnostic": {
+      "exit_code": 2,
+      "run_id": "run-69ed618cd38544349955ac573ed2e437",
+      "revision": "347bad0e9b4117f448653cd6d71bd0687a75edc6",
+      "working_tree_dirty": false,
+      "skipped_cases": 42,
+      "blocked_obligations": 142,
+      "product_acceptance": "blocked"
+    },
+    "native_pytest_display": {
+      "passed": 728,
+      "skipped": 19,
+      "passing_subtests": 17
+    }
+  },
+  "review": {
+    "independent_review": "pending orchestrator",
+    "merge": "not authorized to this implementation writer",
+    "postmerge_evidence": "required before supervisor issue closure"
+  },
+  "completed_issues": [],
+  "scoped_tooling_review_candidates": [
+    4
+  ],
+  "master_acceptance_change": "none; 3 historical sponsor verified / 44 planned preserved",
+  "entries": [
+    {
+      "number": 1,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/1",
+      "created_at": "2026-10-10T06:52:31Z",
+      "live_state": "OPEN",
+      "body_sha256": "bbc52daf944615b75b6f7af3d77597fa74a2d0ddaa50f1a63916d18c10c53d07",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/1#issuecomment-6122113696",
+          "sha256": "e373b7a9b9e7a4703cd7603cdbb6cef0065b46ecf8af02371bc1ab173643fc01"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/1#issuecomment-6122332765",
+          "sha256": "5c35b8dce35e78429e6ee72ae1c456ce6f5586b914fb7af59ce0fdc0205f14c2"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/1#issuecomment-6123227531",
+          "sha256": "fafd0a6e5a20eea1256e815da1a9256d39d6abe4f0c70b945d9fd4fa36c4b763"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/1#issuecomment-6129467200",
+          "sha256": "38739e1e79a5aa66b6290c4adb5d04dc8caade8523bf223092d679734fb0d5d4"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/1#issuecomment-6130641975",
+          "sha256": "5d267fd6d44fc0aae31c86ec846257d497cc641a949107028060f34a3b01a5e8"
+        }
+      ],
+      "disposition": "blocked",
+      "note": "Epic remains open; its earliest prerequisite is #3; retain every leaf and release gate.",
+      "requirements": [],
+      "scenario_ids": [],
+      "implementation_paths": [
+        "planning/requirements.json",
+        "src/integration_evals/release.py"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/shared-contracts",
+          "issue": 30,
+          "url": "https://github.com/Jevelopers-neatHack-2026/shared-contracts/issues/30",
+          "contract": "Canonical SDK migration / consumer receipts",
+          "needed_change": "Supply exact owner-elected package and producer/consumer compatibility disposition and accountable current caller receipts. Existing 0.9.7 default and 0.10.1 opt-in are separate; current upstream main is not an accepted replacement."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 27,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/27",
+          "contract": "Host/provider authority",
+          "needed_change": "Supply actual eligible host, issuer, read/export/dispatch grants and explicit current provider budget/cap/cleanup authority. Configuration and credentials alone grant no authority."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/3",
+      "created_at": "2026-10-10T19:20:55Z",
+      "live_state": "OPEN",
+      "body_sha256": "cc8f306e0f68bd7b98a3848ef356125f74c808f863c59eb9f834f8535ac9bd00",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/3#issuecomment-6122033412",
+          "sha256": "a0b0cd2e0dc1d5cf04c9684ef93cb3616e5b37c949b748321845e4f3f80cf149"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/3#issuecomment-6123212033",
+          "sha256": "545f433f3f469eaa08584c8762c505abe62cf8a981e5da3faf3e065f3dec431c"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/3#issuecomment-6129879383",
+          "sha256": "e707d3fe6cf591935862325543ec6f085521692dc6d5dc47b5735d5a39bac990"
+        }
+      ],
+      "disposition": "partial",
+      "note": "Hardened provider endpoint preflight and mandatory registry. Architecture, four modes and owner protocol already merged; actual accepted workspace/owner execution still absent.",
+      "requirements": [
+        "IE-01.AC1",
+        "IE-01.AC2",
+        "IE-01.AC3",
+        "IE-01.AC4",
+        "IE-01.AC5"
+      ],
+      "scenario_ids": [],
+      "implementation_paths": [
+        "src/integration_evals/preflight.py",
+        "src/integration_evals/runner.py",
+        "docs/execution-protocol.md"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 27,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/27",
+          "contract": "Host/provider authority",
+          "needed_change": "Supply actual eligible host, issuer, read/export/dispatch grants and explicit current provider budget/cap/cleanup authority. Configuration and credentials alone grant no authority."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/4",
+      "created_at": "2026-10-10T19:21:30Z",
+      "live_state": "OPEN",
+      "body_sha256": "66d8c691c83ac647c83cd9dd819a17272f34ff425afefec3950a3ade55faee5c",
+      "comments": [],
+      "disposition": "review_candidate",
+      "note": "Catalog now rejects whitespace provenance, sensitive metadata even in quarantine, and nonreserved synthetic hosts regardless of scheme case. Existing immutable catalog, revocation/quarantine and access guidance retained. Candidate for scoped tooling review, not product acceptance.",
+      "requirements": [
+        "IE-02A.AC1",
+        "IE-02A.AC2",
+        "IE-02A.AC3",
+        "IE-02A.AC4"
+      ],
+      "scenario_ids": [],
+      "implementation_paths": [
+        "src/integration_evals/validation.py",
+        "fixtures/catalog.json",
+        "tests/test_validation.py",
+        "docs/evidence-index.md"
+      ],
+      "external_dependencies": []
+    },
+    {
+      "number": 5,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/5",
+      "created_at": "2026-10-10T19:21:33Z",
+      "live_state": "OPEN",
+      "body_sha256": "01e1805af6d295c1f4eeb0538094999be8dffe5775c1f3c1f31c2bed8eeeecfa",
+      "comments": [],
+      "disposition": "blocked",
+      "note": "20 original inert positive/negative fixtures and separate canonical/component corpora exist. Full accepted pinned upstream fixture/interface and provenance review remain required; no synthetic object authenticates approval.",
+      "requirements": [
+        "IE-02B.AC1",
+        "IE-02B.AC2",
+        "IE-02B.AC3",
+        "IE-02B.AC4",
+        "IE-02B.AC5"
+      ],
+      "scenario_ids": [],
+      "implementation_paths": [
+        "fixtures/catalog.json",
+        "contracts/producer-pin.json",
+        "src/integration_evals/specifications.py"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/shared-contracts",
+          "issue": 30,
+          "url": "https://github.com/Jevelopers-neatHack-2026/shared-contracts/issues/30",
+          "contract": "Canonical SDK migration / consumer receipts",
+          "needed_change": "Supply exact owner-elected package and producer/consumer compatibility disposition and accountable current caller receipts. Existing 0.9.7 default and 0.10.1 opt-in are separate; current upstream main is not an accepted replacement."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/event-intelligence",
+          "issue": 3,
+          "url": "https://github.com/Jevelopers-neatHack-2026/event-intelligence/issues/3",
+          "contract": "ResearchRequest / EventIntelligencePackage",
+          "needed_change": "Supply supported accepted canonical research-package producer/caller and sourced permission-preserving handoff to Product/Creative at the selected pins; no synthetic EventData substitution."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/creative-engine",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/creative-engine/issues/19",
+          "contract": "ApprovalReference / ApprovalReceipt / ArtifactHandoffManifest",
+          "needed_change": "Supply exact generated and revised artwork bytes, current rights and app issuer verification, selected version/hash/facts bindings and atomic downstream consumer receipt."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6",
+      "created_at": "2026-10-10T19:22:00Z",
+      "live_state": "OPEN",
+      "body_sha256": "2765ef0466348e3c381aea835c48deda96109614a011ec496fc86dc65847a0a9",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6#issuecomment-6118299776",
+          "sha256": "ede4d1723b1054e68ec8e42dffbe6d62b5c489c35e1367bc9cfdfae9fa1c694a"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6#issuecomment-6118385198",
+          "sha256": "291d3f579b73c0299b8f85e4a4fdb37b0cdcef64fa924c32cb4b5469d1aff18a"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6#issuecomment-6118691323",
+          "sha256": "80dc7c8981dd6ee2c4018ba19c728f1fb11c3c3a1245632ac95633ea7fdc8ef5"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6#issuecomment-6118845887",
+          "sha256": "d71a83a29e66fcbde55c0cc9f4e8efa88084f9db2d8313fede31362cf7da3a1a"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6#issuecomment-6122375171",
+          "sha256": "3dc8df370bfd4b3c57c998afed1466e3c4edf55f0b5cda915f68a588c0394e96"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6#issuecomment-6123998280",
+          "sha256": "597b7eaa17c38a1a47f98f69074ccc06be8a1594d61cc362afbcfeabcc50b3de"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6#issuecomment-6125365532",
+          "sha256": "cf7aa448bf9f469ed7ccf1ec1964a72f19ca631024b3baa9b0838f2ec5cbbc04"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6#issuecomment-6126280928",
+          "sha256": "dac00d22cd74e2bde9ee65f6888eecc20a936f90d6de569123036b0e731a2bf8"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/6#issuecomment-6126837042",
+          "sha256": "27f72820a9dd92576ad355df90140367e825c06441f4964e1e5122f80e4fc27c"
+        }
+      ],
+      "disposition": "blocked",
+      "note": "Merged source/installed compatibility and captured consumer lanes remain limited to exact reviewed artifacts; no aggregate producer/consumer adoption follows.",
+      "requirements": [
+        "IE-03A.AC1",
+        "IE-03A.AC2",
+        "IE-03A.AC3",
+        "IE-03A.AC4",
+        "IE-03A.AC5",
+        "IE-03A.AC6"
+      ],
+      "scenario_ids": [
+        "canonical-conformance"
+      ],
+      "implementation_paths": [
+        "src/integration_evals/contracts.py",
+        "integration_tests/installed-scenarios.mjs"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/shared-contracts",
+          "issue": 30,
+          "url": "https://github.com/Jevelopers-neatHack-2026/shared-contracts/issues/30",
+          "contract": "Canonical SDK migration / consumer receipts",
+          "needed_change": "Supply exact owner-elected package and producer/consumer compatibility disposition and accountable current caller receipts. Existing 0.9.7 default and 0.10.1 opt-in are separate; current upstream main is not an accepted replacement."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/event-intelligence",
+          "issue": 3,
+          "url": "https://github.com/Jevelopers-neatHack-2026/event-intelligence/issues/3",
+          "contract": "ResearchRequest / EventIntelligencePackage",
+          "needed_change": "Supply supported accepted canonical research-package producer/caller and sourced permission-preserving handoff to Product/Creative at the selected pins; no synthetic EventData substitution."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/creative-engine",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/creative-engine/issues/19",
+          "contract": "ApprovalReference / ApprovalReceipt / ArtifactHandoffManifest",
+          "needed_change": "Supply exact generated and revised artwork bytes, current rights and app issuer verification, selected version/hash/facts bindings and atomic downstream consumer receipt."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/cost-intelligence",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+          "contract": "UsageEvent / BudgetReservation / FinancialSummary",
+          "needed_change": "Supply accepted public lifecycle/usage ingestion, original in-process result/clock and current coherent host authorization fence; execute same selected run and retain independent projections. Captured export fixtures remain scoped synthetic evidence."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/7",
+      "created_at": "2026-10-10T19:22:03Z",
+      "live_state": "OPEN",
+      "body_sha256": "fe2ae3f254990292f87cd3c7d24cc42cbc1cebb16fbf764560d4e11287ababdb",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/7#issuecomment-6156047350",
+          "sha256": "8b70c84b56ad0039bb9f868494fe73497d788b5d51ebb035fb11ad00ba460486"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/7#issuecomment-6159502255",
+          "sha256": "04e214699f40d1607b9c34a2b881c5d53ef338f2959d3b4c431a6f1687fb5a66"
+        }
+      ],
+      "disposition": "blocked",
+      "note": "Merged reference hardening and semantic oracles do not supply server authorization, accepted issuer/current rights or one-writer observations for a composed run. Sensitive reporting destination/security owner remain maintainer decisions.",
+      "requirements": [
+        "IE-03B.AC1",
+        "IE-03B.AC2",
+        "IE-03B.AC3",
+        "IE-03B.AC4"
+      ],
+      "scenario_ids": [
+        "wrong-tenant",
+        "stale-approval"
+      ],
+      "implementation_paths": [
+        "src/integration_evals/artifacts.py",
+        "scenarios/suite.json"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/creative-engine",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/creative-engine/issues/19",
+          "contract": "ApprovalReference / ApprovalReceipt / ArtifactHandoffManifest",
+          "needed_change": "Supply exact generated and revised artwork bytes, current rights and app issuer verification, selected version/hash/facts bindings and atomic downstream consumer receipt."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 27,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/27",
+          "contract": "Host/provider authority",
+          "needed_change": "Supply actual eligible host, issuer, read/export/dispatch grants and explicit current provider budget/cap/cleanup authority. Configuration and credentials alone grant no authority."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/8",
+      "created_at": "2026-10-10T19:23:06Z",
+      "live_state": "OPEN",
+      "body_sha256": "2c4f9b6bc25cdf85c35f3113d8ab75ab5c8eba3b01ccbd80bbf79378ae2c55c2",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/8#issuecomment-6104925337",
+          "sha256": "cf4d237b79b0b6d2ff108a390b70c8ec4751753d6b0567d058a7e70e138082b2"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/8#issuecomment-6106229329",
+          "sha256": "6160b33bcc43bf8ede3727f5c47846cbf83f57c9dbcdebcb13febc8771d2342f"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/8#issuecomment-6117577931",
+          "sha256": "3fda769b93c79360564b4cb26b919c7a029c61105e729d9bf06b06262dc64e9a"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/8#issuecomment-6117673814",
+          "sha256": "115d3611cd2c2d24fe436730a79bf7edb7e8abce1439daf511889a0a85415168"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/8#issuecomment-6124109608",
+          "sha256": "b5bbbf6e2e60628b3fdea87a04340c2a44696386bcf2ec717f5c3220333a2775"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/8#issuecomment-6159427964",
+          "sha256": "a39c2844799375be7f0c883cf2f330554d3accc4adb1291f21ded7bfa75a32eb"
+        }
+      ],
+      "disposition": "partial",
+      "note": "Merged machine reporting/evidence joins preserve original outcomes. Mandatory registry completeness repaired. Required owner-reviewed boundary evidence still missing; shared guidance walkthrough recorded separately below.",
+      "requirements": [
+        "IE-09A.AC1",
+        "IE-09A.AC2",
+        "IE-09A.AC3",
+        "IE-09A.AC4",
+        "IE-09A.AC5"
+      ],
+      "scenario_ids": [],
+      "implementation_paths": [
+        "src/integration_evals/reporting.py",
+        "src/integration_evals/evidence_index.py",
+        "src/integration_evals/validation.py"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/shared-contracts",
+          "issue": 30,
+          "url": "https://github.com/Jevelopers-neatHack-2026/shared-contracts/issues/30",
+          "contract": "Canonical SDK migration / consumer receipts",
+          "needed_change": "Supply exact owner-elected package and producer/consumer compatibility disposition and accountable current caller receipts. Existing 0.9.7 default and 0.10.1 opt-in are separate; current upstream main is not an accepted replacement."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/9",
+      "created_at": "2026-10-10T19:23:32Z",
+      "live_state": "OPEN",
+      "body_sha256": "54f18147d5c78a3c0a2493ea9eb86cf32bee0128449e1ef3d879c5fee74ca5dc",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/9#issuecomment-6116301039",
+          "sha256": "2f0d2047d179e7bc51e9b3358102668e1d094e93ed7e80943da2e7efa91f56b4"
+        }
+      ],
+      "disposition": "partial",
+      "note": "Pinned offline workflows and checkout validation already exist; endpoint/registry guards strengthened. Composed assembly and authorized real-mode profile remain missing.",
+      "requirements": [
+        "IE-10.AC1",
+        "IE-10.AC2",
+        "IE-10.AC3",
+        "IE-10.AC4",
+        "IE-10.AC5"
+      ],
+      "scenario_ids": [],
+      "implementation_paths": [
+        ".github/workflows/verification.yml",
+        "src/integration_evals/validation.py",
+        "src/integration_evals/preflight.py"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 27,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/27",
+          "contract": "Host/provider authority",
+          "needed_change": "Supply actual eligible host, issuer, read/export/dispatch grants and explicit current provider budget/cap/cleanup authority. Configuration and credentials alone grant no authority."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/10",
+      "created_at": "2026-10-10T19:23:59Z",
+      "live_state": "OPEN",
+      "body_sha256": "efe93e9fe85ba6cc1b34434bf8fe2d94268452849386e8c4f0062fac55d6e1fa",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/10#issuecomment-6123042991",
+          "sha256": "37661a12a4b7b4d3122b3a37ad3801c4145f65fa437b18b14a7e0b1b703f90b1"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/10#issuecomment-6128103473",
+          "sha256": "6f487ea248898d7552cd8cbf88e6c2f485a8370d94be7b1293c5fdfe8e66ee83"
+        }
+      ],
+      "disposition": "blocked",
+      "note": "Selected journey remains NOT_RUN. App snapshot tooling explicitly records no execution/acceptance; native recovery qualification is not the positive journey.",
+      "requirements": [
+        "IE-04.AC1",
+        "IE-04.AC2",
+        "IE-04.AC3",
+        "IE-04.AC4",
+        "IE-04.AC5"
+      ],
+      "scenario_ids": [
+        "happy-path"
+      ],
+      "implementation_paths": [
+        "docs/app-recovery-component-development.md",
+        "scenarios/suite.json"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/event-intelligence",
+          "issue": 3,
+          "url": "https://github.com/Jevelopers-neatHack-2026/event-intelligence/issues/3",
+          "contract": "ResearchRequest / EventIntelligencePackage",
+          "needed_change": "Supply supported accepted canonical research-package producer/caller and sourced permission-preserving handoff to Product/Creative at the selected pins; no synthetic EventData substitution."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/creative-engine",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/creative-engine/issues/19",
+          "contract": "ApprovalReference / ApprovalReceipt / ArtifactHandoffManifest",
+          "needed_change": "Supply exact generated and revised artwork bytes, current rights and app issuer verification, selected version/hash/facts bindings and atomic downstream consumer receipt."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 27,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/27",
+          "contract": "Host/provider authority",
+          "needed_change": "Supply actual eligible host, issuer, read/export/dispatch grants and explicit current provider budget/cap/cleanup authority. Configuration and credentials alone grant no authority."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/11",
+      "created_at": "2026-10-10T19:24:26Z",
+      "live_state": "OPEN",
+      "body_sha256": "dc549d154ebca566b7ca6c1457f62eee16b5a8a52b1133e95ddea6fb98a1f178",
+      "comments": [],
+      "disposition": "blocked",
+      "note": "Existing restart/duplicate/cancel/concurrency oracles and scoped app recovery do not establish all four durable crash points or actual shared owner state for the selected journey.",
+      "requirements": [
+        "IE-05A.AC1",
+        "IE-05A.AC2",
+        "IE-05A.AC3",
+        "IE-05A.AC4",
+        "IE-05A.AC5"
+      ],
+      "scenario_ids": [
+        "restart-before-send",
+        "restart-after-checkpoint",
+        "restart-after-external-success",
+        "duplicate-worker-race",
+        "cancel-before-send",
+        "cancel-in-flight",
+        "budget-contention",
+        "design-head-contention",
+        "bounded-recovery"
+      ],
+      "implementation_paths": [
+        "scenarios/suite.json",
+        "docs/app-recovery-component-development.md"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/cost-intelligence",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+          "contract": "UsageEvent / BudgetReservation / FinancialSummary",
+          "needed_change": "Supply accepted public lifecycle/usage ingestion, original in-process result/clock and current coherent host authorization fence; execute same selected run and retain independent projections. Captured export fixtures remain scoped synthetic evidence."
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/12",
+      "created_at": "2026-10-10T19:24:33Z",
+      "live_state": "OPEN",
+      "body_sha256": "3560138239b5720e09da6bc1be668401be288de11c64c3c917063be143122ec4",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/12#issuecomment-6128364258",
+          "sha256": "88aeeba76efc15a1c440da317d90a86656703d4f7dd7ca323209e4ba70b2d507"
+        }
+      ],
+      "disposition": "blocked",
+      "note": "Merged 24-case Creative-Harness-Creative decision-failure lane covers real supported APIs under intercepted mock transport; canonical research package and actual composed/provider boundary remain unqualified.",
+      "requirements": [
+        "IE-05B.AC1",
+        "IE-05B.AC2",
+        "IE-05B.AC3",
+        "IE-05B.AC4",
+        "IE-05B.AC5"
+      ],
+      "scenario_ids": [
+        "bounded-recovery",
+        "jev-malformed",
+        "research-conflicts"
+      ],
+      "implementation_paths": [
+        "docs/decision-failure-component-development.md",
+        "decision_failure_component_tests/run.mjs"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/event-intelligence",
+          "issue": 3,
+          "url": "https://github.com/Jevelopers-neatHack-2026/event-intelligence/issues/3",
+          "contract": "ResearchRequest / EventIntelligencePackage",
+          "needed_change": "Supply supported accepted canonical research-package producer/caller and sourced permission-preserving handoff to Product/Creative at the selected pins; no synthetic EventData substitution."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 27,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/27",
+          "contract": "Host/provider authority",
+          "needed_change": "Supply actual eligible host, issuer, read/export/dispatch grants and explicit current provider budget/cap/cleanup authority. Configuration and credentials alone grant no authority."
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/13",
+      "created_at": "2026-10-10T19:25:00Z",
+      "live_state": "OPEN",
+      "body_sha256": "2309bddc6e44c87b36cb4475bd61eff09d7d04ef971cc2c40ac8ea195ad4e65e",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/13#issuecomment-6122169617",
+          "sha256": "0d1fa27bc5396320f35a5b2139b1f72638d1623cc7e7e583e17ac85e51d60e7e"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/13#issuecomment-6122233543",
+          "sha256": "3de218c427c369a5932188d1685da90e6628f98b4f61f18827eddfebdaa51147"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/13#issuecomment-6124904560",
+          "sha256": "061ab7c234332f6cfa744d5f58c4056b33268bfd9362a60ee10fca94adf8d6ab"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/13#issuecomment-6124924446",
+          "sha256": "619b7c23140a3f1785ddb21883c4140e8c1925a99976565b47a6ba20129c1adc"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/13#issuecomment-6126732764",
+          "sha256": "cb955e3fc654b33ac1c41785b4756b8bb5adb37b8e822abb52faf6d25b7c8728"
+        }
+      ],
+      "disposition": "blocked",
+      "note": "Captured Finance924/export/denial evidence and public development lane are merged; actual current-authority usage bridge, ambiguity reconciliation and selected supplier behavior are missing.",
+      "requirements": [
+        "IE-05C.AC1",
+        "IE-05C.AC2",
+        "IE-05C.AC3",
+        "IE-05C.AC4",
+        "IE-05C.AC5"
+      ],
+      "scenario_ids": [
+        "ambiguous-send",
+        "transport-redelivery",
+        "billable-retry",
+        "user-reissue",
+        "reconciliation",
+        "restart-after-external-success",
+        "publication-loss",
+        "supplier-ambiguity"
+      ],
+      "implementation_paths": [
+        "docs/finance-component-development.md",
+        "docs/finance-export-captured-consumer.md"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/cost-intelligence",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+          "contract": "UsageEvent / BudgetReservation / FinancialSummary",
+          "needed_change": "Supply accepted public lifecycle/usage ingestion, original in-process result/clock and current coherent host authorization fence; execute same selected run and retain independent projections. Captured export fixtures remain scoped synthetic evidence."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/fulfillment-connectors",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/fulfillment-connectors/issues/1",
+          "contract": "FulfillmentQuote / OrderAuthorization / FulfillmentStatus",
+          "needed_change": "Supply current selected SKU/provider authority and accepted app/Finance/approval bindings for an explicitly authorized sandbox journey, with callbacks and ambiguity reconciliation; no purchase is authorized here."
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/14",
+      "created_at": "2026-10-10T19:25:03Z",
+      "live_state": "OPEN",
+      "body_sha256": "69227c46494d9440c82739c95c284c078232d91510132ed638178362d7d9fb98",
+      "comments": [],
+      "disposition": "blocked",
+      "note": "Guarded print and captured fulfillment/Finance checks are scoped contributions; complete correlated production, sandbox order, financial and dashboard acceptance still needs owner evidence.",
+      "requirements": [
+        "IE-05D.AC1",
+        "IE-05D.AC2",
+        "IE-05D.AC3",
+        "IE-05D.AC4",
+        "IE-05D.AC5"
+      ],
+      "scenario_ids": [
+        "print-preflight",
+        "print-invalid",
+        "quote-only",
+        "authorization-mutation",
+        "invoice-coverage",
+        "subcent",
+        "allocation",
+        "classification",
+        "mode-isolation",
+        "dashboard-totals",
+        "dashboard-authority"
+      ],
+      "implementation_paths": [
+        "docs/print-component.md",
+        "docs/fulfillment-component-development.md",
+        "scenarios/suite.json"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/print-production",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/print-production/issues/1",
+          "contract": "ProductionBundle / production containment",
+          "needed_change": "Supply accepted exact personalized output/preflight/hash evidence in a supported production runtime. Guarded synthetic profile does not establish ART-04."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/fulfillment-connectors",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/fulfillment-connectors/issues/1",
+          "contract": "FulfillmentQuote / OrderAuthorization / FulfillmentStatus",
+          "needed_change": "Supply current selected SKU/provider authority and accepted app/Finance/approval bindings for an explicitly authorized sandbox journey, with callbacks and ambiguity reconciliation; no purchase is authorized here."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/cost-intelligence",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+          "contract": "UsageEvent / BudgetReservation / FinancialSummary",
+          "needed_change": "Supply accepted public lifecycle/usage ingestion, original in-process result/clock and current coherent host authorization fence; execute same selected run and retain independent projections. Captured export fixtures remain scoped synthetic evidence."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/team-dashboard",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/team-dashboard/issues/1",
+          "contract": "FinancialSummary projection / actor authorization",
+          "needed_change": "Supply actual consumer projection/drilldown and member/command authorization receipts for the same period, currency, billing mode and selected business run."
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/15",
+      "created_at": "2026-10-10T19:25:36Z",
+      "live_state": "OPEN",
+      "body_sha256": "9a51012561264ffb4da3489e8ec6c520c7f92523e678646c62e0114176ae4423",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/15#issuecomment-6117912302",
+          "sha256": "de812d17b2c84bfe7bd8e9b7dc532209ed3b5f31f107c70d25089e20dd873e24"
+        }
+      ],
+      "disposition": "deferred_external",
+      "note": "Prior explicit initial-deployment deferral retained; issue remains unverified. Current 12 smoke rows cannot satisfy ratified corpus, adjudication or held-out requirements.",
+      "requirements": [
+        "IE-06A.AC1",
+        "IE-06A.AC2",
+        "IE-06A.AC3",
+        "IE-06A.AC4",
+        "IE-06A.AC5"
+      ],
+      "scenario_ids": [],
+      "implementation_paths": [
+        "benchmarks/corpus.json",
+        "src/integration_evals/benchmarks.py"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/event-intelligence",
+          "issue": 15,
+          "url": "https://github.com/Jevelopers-neatHack-2026/event-intelligence/issues/15",
+          "contract": "Adjudicated corpus / numeric policy",
+          "needed_change": "Supply permission-reviewed, independently double-labeled and adjudicated disjoint calibration/held-out exports with immutable digests and ratified numeric targets."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/creative-engine",
+          "issue": 8,
+          "url": "https://github.com/Jevelopers-neatHack-2026/creative-engine/issues/8",
+          "contract": "Creative corpus / promotion policy",
+          "needed_change": "Supply owner-approved routing/inspection strata, independently adjudicated data and ratified quality/safety/cost/latency and uncertainty thresholds."
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/16",
+      "created_at": "2026-10-10T19:25:39Z",
+      "live_state": "OPEN",
+      "body_sha256": "b566e6966cc009da192450171e42d6bb0b797704c1ecde3b7d5a1de48dd46c29",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/16#issuecomment-6117912491",
+          "sha256": "b6358784b4387f20b41a3382c2ef5af2b8163620862734bbcf0d34e5b6a5778b"
+        }
+      ],
+      "disposition": "deferred_external",
+      "note": "Prior explicit initial-deployment deferral retained; no EVAL-02 or routing promotion. Actual paired baseline/candidate owner executions and complete ratified target register still absent.",
+      "requirements": [
+        "IE-06B.AC1",
+        "IE-06B.AC2",
+        "IE-06B.AC3",
+        "IE-06B.AC4",
+        "IE-06B.AC5"
+      ],
+      "scenario_ids": [
+        "jev-held-out-comparison"
+      ],
+      "implementation_paths": [
+        "benchmarks/policy.json",
+        "src/integration_evals/policy.py"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/event-intelligence",
+          "issue": 15,
+          "url": "https://github.com/Jevelopers-neatHack-2026/event-intelligence/issues/15",
+          "contract": "Adjudicated corpus / numeric policy",
+          "needed_change": "Supply permission-reviewed, independently double-labeled and adjudicated disjoint calibration/held-out exports with immutable digests and ratified numeric targets."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/creative-engine",
+          "issue": 8,
+          "url": "https://github.com/Jevelopers-neatHack-2026/creative-engine/issues/8",
+          "contract": "Creative corpus / promotion policy",
+          "needed_change": "Supply owner-approved routing/inspection strata, independently adjudicated data and ratified quality/safety/cost/latency and uncertainty thresholds."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/agent-harness",
+          "issue": 6,
+          "url": "https://github.com/Jevelopers-neatHack-2026/agent-harness/issues/6",
+          "contract": "DecisionPort classifier targets",
+          "needed_change": "Supply approved question/class targets and actual baseline/candidate owner execution receipts on identical frozen inputs; smoke rows cannot promote."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 27,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/27",
+          "contract": "Host/provider authority",
+          "needed_change": "Supply actual eligible host, issuer, read/export/dispatch grants and explicit current provider budget/cap/cleanup authority. Configuration and credentials alone grant no authority."
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/17",
+      "created_at": "2026-10-10T19:26:07Z",
+      "live_state": "OPEN",
+      "body_sha256": "c4c1ae675a40e3dbbf8b31636f0f6a8d35685ad0466d85a4fb39a519a1ebaa39",
+      "comments": [],
+      "disposition": "blocked",
+      "note": "Separate evidence profiles, image metadata/chain validation and gated preflight exist. Authentic generation+edit, output/usage/permission and selected approval chain still need actual authorized Creative evidence.",
+      "requirements": [
+        "IE-07.AC1",
+        "IE-07.AC2",
+        "IE-07.AC3",
+        "IE-07.AC4",
+        "IE-07.AC5"
+      ],
+      "scenario_ids": [
+        "image-generation-edit",
+        "image-failure"
+      ],
+      "implementation_paths": [
+        "src/integration_evals/evidence_index.py",
+        "src/integration_evals/preflight.py",
+        "docs/evidence-index.md"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/creative-engine",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/creative-engine/issues/19",
+          "contract": "ApprovalReference / ApprovalReceipt / ArtifactHandoffManifest",
+          "needed_change": "Supply exact generated and revised artwork bytes, current rights and app issuer verification, selected version/hash/facts bindings and atomic downstream consumer receipt."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 27,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/27",
+          "contract": "Host/provider authority",
+          "needed_change": "Supply actual eligible host, issuer, read/export/dispatch grants and explicit current provider budget/cap/cleanup authority. Configuration and credentials alone grant no authority."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/18",
+      "created_at": "2026-10-10T19:26:10Z",
+      "live_state": "OPEN",
+      "body_sha256": "e7f065452b86dcb9308f097cc9e65559579a05173463fce91c7dc6bb42c140b5",
+      "comments": [],
+      "disposition": "blocked",
+      "note": "Pinned Linux SafeFetcher component covers controlled private-network cases; full research/JEV/Creative hostile-content propagation and authoritative external egress/privileged-action observations remain missing.",
+      "requirements": [
+        "IE-11A.AC1",
+        "IE-11A.AC2",
+        "IE-11A.AC3",
+        "IE-11A.AC4"
+      ],
+      "scenario_ids": [
+        "ssrf-egress",
+        "prompt-injection"
+      ],
+      "implementation_paths": [
+        "docs/retrieval-component.md",
+        "scenarios/suite.json"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/event-intelligence",
+          "issue": 3,
+          "url": "https://github.com/Jevelopers-neatHack-2026/event-intelligence/issues/3",
+          "contract": "ResearchRequest / EventIntelligencePackage",
+          "needed_change": "Supply supported accepted canonical research-package producer/caller and sourced permission-preserving handoff to Product/Creative at the selected pins; no synthetic EventData substitution."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/creative-engine",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/creative-engine/issues/19",
+          "contract": "ApprovalReference / ApprovalReceipt / ArtifactHandoffManifest",
+          "needed_change": "Supply exact generated and revised artwork bytes, current rights and app issuer verification, selected version/hash/facts bindings and atomic downstream consumer receipt."
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/19",
+      "created_at": "2026-10-10T19:26:48Z",
+      "live_state": "OPEN",
+      "body_sha256": "fd87562196ebbbab894eac6350c0659d3695ceafdb3a81ec63e989a5f5526230",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/19#issuecomment-6122470420",
+          "sha256": "1c21a6589d35589cf2f1e87bd43cb7daf9b4435902d352d8c32726c356df72af"
+        }
+      ],
+      "disposition": "partial",
+      "note": "Merged containment/privacy guards remain and catalog metadata leak scanning is strengthened. Full two-tenant API/job/cache/download/dashboard and current approval/rights revocation evidence requires owner interfaces.",
+      "requirements": [
+        "IE-11B.AC1",
+        "IE-11B.AC2",
+        "IE-11B.AC3",
+        "IE-11B.AC4",
+        "IE-11B.AC5"
+      ],
+      "scenario_ids": [
+        "wrong-tenant",
+        "stale-approval",
+        "hostile-asset",
+        "revocation",
+        "export-canaries"
+      ],
+      "implementation_paths": [
+        "src/integration_evals/validation.py",
+        "docs/offline-read-containment.md",
+        "scenarios/suite.json"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/creative-engine",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/creative-engine/issues/19",
+          "contract": "ApprovalReference / ApprovalReceipt / ArtifactHandoffManifest",
+          "needed_change": "Supply exact generated and revised artwork bytes, current rights and app issuer verification, selected version/hash/facts bindings and atomic downstream consumer receipt."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 27,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/27",
+          "contract": "Host/provider authority",
+          "needed_change": "Supply actual eligible host, issuer, read/export/dispatch grants and explicit current provider budget/cap/cleanup authority. Configuration and credentials alone grant no authority."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/team-dashboard",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/team-dashboard/issues/1",
+          "contract": "FinancialSummary projection / actor authorization",
+          "needed_change": "Supply actual consumer projection/drilldown and member/command authorization receipts for the same period, currency, billing mode and selected business run."
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20",
+      "created_at": "2026-10-10T19:26:52Z",
+      "live_state": "OPEN",
+      "body_sha256": "36908710787d69a1e5dfc3a545a400f70db4bb603ec01aa8039a03fd14270e14",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20#issuecomment-6103823657",
+          "sha256": "9c7235d91f2912977e0b952a01c9adac4dbd448f702b3f137947e1c2cdfe8c9e"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20#issuecomment-6103860856",
+          "sha256": "a88a68f30491d76dc2e207ca4d27d82dd7204b6f601d9ba5b897dbd060bf31da"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20#issuecomment-6106716361",
+          "sha256": "883510d26954c941058f909b4b7a33131c3abab8f35a2d09513fe9c49d0fd2d0"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20#issuecomment-6106788280",
+          "sha256": "96fc3dc103c0d7a2a504937edb7809fb24d765c1bfc05cabf9c5e992e6d4466a"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20#issuecomment-6106859877",
+          "sha256": "129125a66be8b55733ce7ab7b7e1e2ac48b720ed0d1453edc27bbd56c4ffc6ac"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20#issuecomment-6111100780",
+          "sha256": "cd58aff850d34753609aeaa1b4258e896db9cd38772a5adc891512aa87514cc4"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20#issuecomment-6112302205",
+          "sha256": "3c7f82a134853329b682cbca372ee2e3dd675e032dab432d0eac21f63beb4cb3"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20#issuecomment-6112622929",
+          "sha256": "e60f1ee33f19269c326910a020cad6c94bd7f809bf2c19170ab98cdb776cbf57"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20#issuecomment-6112762319",
+          "sha256": "25ca5346c2df8cf788e74435e8f8191ea2095bea027c045522afac43ae6fc73b"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20#issuecomment-6112840013",
+          "sha256": "fdfa2a3e682d101e6e4cc4f8e3a2163dc931eec4a532645c6871ea248a3fb220"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20#issuecomment-6117577766",
+          "sha256": "8871b41a11fdbdbe333abf5284153c8038ba84465bc821a1dd7d47873d2393b9"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20#issuecomment-6117673682",
+          "sha256": "3d948b9b034647018f7112dbe6c3207da3f41a8d13c8d4f0b2d6f647bdda4716"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/20#issuecomment-6122064397",
+          "sha256": "ece79b6ee05901e650262ee286902fa62d0dd6ad8f794a1e90b8a7f7cfe5b62e"
+        }
+      ],
+      "disposition": "blocked",
+      "note": "Merged evidence index, local review packaging and synthetic sample remain distinct from authentic sponsor/rights/reviewer access. Historical three sponsor acceptances retained; CFO generic export is not Finance-approved.",
+      "requirements": [
+        "IE-08.AC1",
+        "IE-08.AC2",
+        "IE-08.AC3",
+        "IE-08.AC4",
+        "IE-08.AC5"
+      ],
+      "scenario_ids": [
+        "sponsor-artifacts"
+      ],
+      "implementation_paths": [
+        "docs/evidence-index.md",
+        "evidence/README.md",
+        "evidence/cfo-ai/2026-10-11-r2/README.md"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/cost-intelligence",
+          "issue": 3,
+          "url": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/3",
+          "contract": "CFO.ai / FinancialSummary owner review",
+          "needed_change": "Resolve CFO-R2-001 via a new native export or enforced reproducible four-guard export step; provide intended-engine blank/empty-string/zero results and Finance re-review. Preserve existing workbooks and historical sponsor acceptance."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/creative-engine",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/creative-engine/issues/19",
+          "contract": "ApprovalReference / ApprovalReceipt / ArtifactHandoffManifest",
+          "needed_change": "Supply exact generated and revised artwork bytes, current rights and app issuer verification, selected version/hash/facts bindings and atomic downstream consumer receipt."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 27,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/27",
+          "contract": "Host/provider authority",
+          "needed_change": "Supply actual eligible host, issuer, read/export/dispatch grants and explicit current provider budget/cap/cleanup authority. Configuration and credentials alone grant no authority."
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/21",
+      "created_at": "2026-10-10T19:26:54Z",
+      "live_state": "OPEN",
+      "body_sha256": "e2f9e64e9ad5b84be8d0080fec98414bc0c2008b94876f974a569e3139a6c622",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/21#issuecomment-6117731474",
+          "sha256": "a4b8fe71477f73a9d326986e4c1879d457a1ca624c430a13ccf032f09c6d6843"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/21#issuecomment-6117804256",
+          "sha256": "a1a284c09c05716f5fdee0c95e08b507a683c614589ebde0cdad90cfdf3698a7"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/21#issuecomment-6117880612",
+          "sha256": "ddc024d885a37275cf2248b8aabdec2d61b3cecddde765090179ce744f49e2d5"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/21#issuecomment-6118691727",
+          "sha256": "80dc7c8981dd6ee2c4018ba19c728f1fb11c3c3a1245632ac95633ea7fdc8ef5"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/21#issuecomment-6118846164",
+          "sha256": "d71a83a29e66fcbde55c0cc9f4e8efa88084f9db2d8313fede31362cf7da3a1a"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/21#issuecomment-6119586591",
+          "sha256": "6c7adde0b6ac1319cd2e6783726a923f7b95f7cc42c39911549cab6b36989a85"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/21#issuecomment-6122375704",
+          "sha256": "75f1c16dd0e29d8fe23b0bf696af95cb6afa8f337cb9eecab7312dcf662eb686"
+        }
+      ],
+      "disposition": "blocked",
+      "note": "Merged complete immutable history, typed failure/quarantine linkage and bounded pure comparison replay exist. No genuine source flake is invented and no generic owner redispatch is authorized from prose or archive data.",
+      "requirements": [
+        "IE-09B.AC1",
+        "IE-09B.AC2",
+        "IE-09B.AC3",
+        "IE-09B.AC4"
+      ],
+      "scenario_ids": [],
+      "implementation_paths": [
+        "src/integration_evals/history.py",
+        "src/integration_evals/replay.py",
+        "docs/safe-reruns-runner.md"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/cost-intelligence",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+          "contract": "UsageEvent / BudgetReservation / FinancialSummary",
+          "needed_change": "Supply accepted public lifecycle/usage ingestion, original in-process result/clock and current coherent host authorization fence; execute same selected run and retain independent projections. Captured export fixtures remain scoped synthetic evidence."
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/22",
+      "created_at": "2026-10-10T19:27:59Z",
+      "live_state": "OPEN",
+      "body_sha256": "cecd04dacb566c4c50fe9167efc90932b983ece8cf0c6947fe77cb3ea8a6d0f3",
+      "comments": [
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/22#issuecomment-6117912653",
+          "sha256": "ba3734e618e5d5379fecb993d1bd7671826a106f558756c3ba8da9321b77baef"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/22#issuecomment-6123268032",
+          "sha256": "e09131bfbc6070c88559783e42db2f516b090b3202a1cd9cbe6b50b7a6d7da61"
+        },
+        {
+          "url": "https://github.com/Jevelopers-neatHack-2026/integration-evals/issues/22#issuecomment-6126761501",
+          "sha256": "438e70da87a4660ed5762dbfc71c5d3d0b198c1764b40d703cbb8ef76447def0"
+        }
+      ],
+      "disposition": "blocked",
+      "note": "Two readiness decisions remain separate. Diagnostic exit2 retains 42 skipped product cases and 142 blocked obligations. Tooling candidate needs independent review, current hosted checks and supervisor postmerge verification; product evidence cannot be waived.",
+      "requirements": [
+        "IE-12.AC1",
+        "IE-12.AC2",
+        "IE-12.AC3",
+        "IE-12.AC4",
+        "IE-12.AC5",
+        "IE-12.AC6",
+        "IE-12.AC7"
+      ],
+      "scenario_ids": [],
+      "implementation_paths": [
+        "src/integration_evals/release.py",
+        "planning/acceptance-checklist.json"
+      ],
+      "external_dependencies": [
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19",
+          "contract": "Assembly 1.0 / OwnerResponse / selected journey",
+          "needed_change": "Supply accepted exact component commit/tree/lock/config/contract/fixture pins, native command and cleanup, supported faults, deterministic clock/state observations, actual selected-run identity and authentic output/approval evidence. Snapshot manifests explicitly have executed=[] and acceptance=not_accepted."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/shared-contracts",
+          "issue": 30,
+          "url": "https://github.com/Jevelopers-neatHack-2026/shared-contracts/issues/30",
+          "contract": "Canonical SDK migration / consumer receipts",
+          "needed_change": "Supply exact owner-elected package and producer/consumer compatibility disposition and accountable current caller receipts. Existing 0.9.7 default and 0.10.1 opt-in are separate; current upstream main is not an accepted replacement."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/event-intelligence",
+          "issue": 3,
+          "url": "https://github.com/Jevelopers-neatHack-2026/event-intelligence/issues/3",
+          "contract": "ResearchRequest / EventIntelligencePackage",
+          "needed_change": "Supply supported accepted canonical research-package producer/caller and sourced permission-preserving handoff to Product/Creative at the selected pins; no synthetic EventData substitution."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/creative-engine",
+          "issue": 19,
+          "url": "https://github.com/Jevelopers-neatHack-2026/creative-engine/issues/19",
+          "contract": "ApprovalReference / ApprovalReceipt / ArtifactHandoffManifest",
+          "needed_change": "Supply exact generated and revised artwork bytes, current rights and app issuer verification, selected version/hash/facts bindings and atomic downstream consumer receipt."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/cost-intelligence",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/cost-intelligence/issues/1",
+          "contract": "UsageEvent / BudgetReservation / FinancialSummary",
+          "needed_change": "Supply accepted public lifecycle/usage ingestion, original in-process result/clock and current coherent host authorization fence; execute same selected run and retain independent projections. Captured export fixtures remain scoped synthetic evidence."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/print-production",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/print-production/issues/1",
+          "contract": "ProductionBundle / production containment",
+          "needed_change": "Supply accepted exact personalized output/preflight/hash evidence in a supported production runtime. Guarded synthetic profile does not establish ART-04."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/fulfillment-connectors",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/fulfillment-connectors/issues/1",
+          "contract": "FulfillmentQuote / OrderAuthorization / FulfillmentStatus",
+          "needed_change": "Supply current selected SKU/provider authority and accepted app/Finance/approval bindings for an explicitly authorized sandbox journey, with callbacks and ambiguity reconciliation; no purchase is authorized here."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/team-dashboard",
+          "issue": 1,
+          "url": "https://github.com/Jevelopers-neatHack-2026/team-dashboard/issues/1",
+          "contract": "FinancialSummary projection / actor authorization",
+          "needed_change": "Supply actual consumer projection/drilldown and member/command authorization receipts for the same period, currency, billing mode and selected business run."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/getticketstub.com",
+          "issue": 27,
+          "url": "https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/27",
+          "contract": "Host/provider authority",
+          "needed_change": "Supply actual eligible host, issuer, read/export/dispatch grants and explicit current provider budget/cap/cleanup authority. Configuration and credentials alone grant no authority."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/event-intelligence",
+          "issue": 15,
+          "url": "https://github.com/Jevelopers-neatHack-2026/event-intelligence/issues/15",
+          "contract": "Adjudicated corpus / numeric policy",
+          "needed_change": "Supply permission-reviewed, independently double-labeled and adjudicated disjoint calibration/held-out exports with immutable digests and ratified numeric targets."
+        },
+        {
+          "repository": "Jevelopers-neatHack-2026/creative-engine",
+          "issue": 8,
+          "url": "https://github.com/Jevelopers-neatHack-2026/creative-engine/issues/8",
+          "contract": "Creative corpus / promotion policy",
+          "needed_change": "Supply owner-approved routing/inspection strata, independently adjudicated data and ratified quality/safety/cost/latency and uncertainty thresholds."
+        }
+      ]
+    }
+  ]
+}
