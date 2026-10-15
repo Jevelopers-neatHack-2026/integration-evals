@@ -7,6 +7,7 @@ from datetime import timedelta
 from pathlib import Path
 from time import monotonic
 from typing import Final
+from urllib.parse import urlsplit
 
 from integration_evals.artifacts import (
     confined_path,
@@ -53,14 +54,14 @@ def validate_catalog(catalog: Catalog, root: Path, requirements: frozenset[Requi
             fail("orphan_fixture", item.id)
         if not all(
             (
-                item.permission,
-                item.creator,
-                item.retention,
-                item.redaction,
-                item.expected,
-                item.tenant_scope,
-                item.media_type,
-                item.source_ref,
+                item.permission.strip(),
+                item.creator.strip(),
+                item.retention.strip(),
+                item.redaction.strip(),
+                item.expected.strip(),
+                item.tenant_scope.strip(),
+                item.media_type.strip(),
+                item.source_ref.strip(),
             )
         ):
             fail("missing_provenance", item.id)
@@ -72,10 +73,12 @@ def validate_catalog(catalog: Catalog, root: Path, requirements: frozenset[Requi
         if digest(data) != item.sha256:
             fail("fixture_digest_mismatch", item.id)
         public_reference(item.source_ref)
+        # Quarantine exempts hostile fixture bytes, never exported catalog metadata.
+        reject_leaks(item.model_dump_json().encode(), item.id)
         if not item.quarantined:
             reject_leaks(data, item.id)
-        if item.origin is Origin.SYNTHETIC and item.source_ref.startswith("https://"):
-            host = item.source_ref.split("/")[2]
+        if item.origin is Origin.SYNTHETIC and urlsplit(item.source_ref).scheme == "https":
+            host = urlsplit(item.source_ref).hostname or ""
             if not (host.endswith(".example") or host in {"example.com", "example.org"}):
                 fail("non_reserved_synthetic_source", item.id)
 
@@ -90,10 +93,13 @@ def validate_suite(
     unique_ids(tuple(case.id for case in suite.cases), "suite")
     if selection is None:
         fail("mandatory_registry_missing", "suite")
-    if not set(selection.mandatory_case_ids).issubset(
-        case.id for case in suite.cases if case.mandatory
-    ):
+    unique_ids(tuple(selection.mandatory_case_ids), "mandatory_registry")
+    mandatory = {case.id for case in suite.cases if case.mandatory}
+    registered = set(selection.mandatory_case_ids)
+    if not registered.issubset(mandatory):
         fail("mandatory_cases_omitted", "suite")
+    if not mandatory.issubset(registered):
+        fail("mandatory_cases_unregistered", "suite")
     fixtures = {item.id: item for item in catalog.fixtures}
     for case in suite.cases:
         if not set(case.requirements).issubset(requirements):

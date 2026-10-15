@@ -75,3 +75,60 @@ def test_suite_rejects_when_case_has_unknown_requirement() -> None:
     with pytest.raises(InvalidArtifactError, match="orphan_case"):
         validate_suite(modified, catalog, owned_requirements(REPOSITORY), selection)
     # Then the orphan case is rejected before dispatch.
+
+
+@pytest.mark.parametrize(
+    "field",
+    [
+        "permission",
+        "creator",
+        "retention",
+        "redaction",
+        "expected",
+        "tenant_scope",
+        "media_type",
+        "source_ref",
+    ],
+)
+def test_catalog_rejects_whitespace_provenance(field: str) -> None:
+    catalog = load_record(REPOSITORY / "fixtures/catalog.json", Catalog)
+    fixture = catalog.fixtures[0].model_copy(update={field: " \t\n"})
+    with pytest.raises(InvalidArtifactError, match="missing_provenance"):
+        validate_catalog(
+            Catalog(fixtures=(fixture,)), REPOSITORY / "fixtures", owned_requirements(REPOSITORY)
+        )
+
+
+@pytest.mark.parametrize("quarantined", [False, True])
+def test_catalog_rejects_sensitive_metadata_even_for_quarantined_bytes(quarantined: bool) -> None:
+    catalog = load_record(REPOSITORY / "fixtures/catalog.json", Catalog)
+    fixture = catalog.fixtures[0].model_copy(
+        update={"creator": "IE_SECRET_CANARY_METADATA", "quarantined": quarantined}
+    )
+    with pytest.raises(InvalidArtifactError, match="sensitive_content"):
+        validate_catalog(
+            Catalog(fixtures=(fixture,)), REPOSITORY / "fixtures", owned_requirements(REPOSITORY)
+        )
+
+
+@pytest.mark.parametrize(
+    "source", ["HTTPS://fixtures.invalid/event", "Https://fixtures.invalid/event"]
+)
+def test_catalog_rejects_non_reserved_synthetic_host_regardless_of_scheme_case(source: str) -> None:
+    catalog = load_record(REPOSITORY / "fixtures/catalog.json", Catalog)
+    fixture = catalog.fixtures[0].model_copy(update={"source_ref": source})
+    with pytest.raises(InvalidArtifactError, match="non_reserved_synthetic_source"):
+        validate_catalog(
+            Catalog(fixtures=(fixture,)), REPOSITORY / "fixtures", owned_requirements(REPOSITORY)
+        )
+
+
+@pytest.mark.parametrize(
+    "source", ["HTTPS://fixtures.example/event", "https://fixtures.example:8443/event"]
+)
+def test_catalog_accepts_reserved_synthetic_host_with_case_or_port(source: str) -> None:
+    catalog = load_record(REPOSITORY / "fixtures/catalog.json", Catalog)
+    fixture = catalog.fixtures[0].model_copy(update={"source_ref": source})
+    validate_catalog(
+        Catalog(fixtures=(fixture,)), REPOSITORY / "fixtures", owned_requirements(REPOSITORY)
+    )

@@ -25,6 +25,28 @@ class PreflightContext:
     authorize_paid: bool
 
 
+def valid_provider_endpoint(endpoint: str | None) -> bool:
+    """Validate endpoint structure without resolving hosts or exposing supplied secrets."""
+    if not endpoint or any(
+        character.isspace() or character < " " or character == "\x7f" for character in endpoint
+    ):
+        return False
+    try:
+        parsed = urlsplit(endpoint)
+        # Accessing port validates its numeric range; urlsplit alone does not.
+        port = parsed.port
+        return bool(
+            parsed.scheme == "https"
+            and parsed.hostname
+            and parsed.username is None
+            and parsed.password is None
+            and not parsed.fragment
+            and (port is None or port > 0)
+        )
+    except ValueError:
+        return False
+
+
 def provider_blocker(
     provider: Provider,
     operations: tuple[str, ...],
@@ -47,7 +69,7 @@ def provider_blocker(
         ),
         (not provider.cap or not provider.currency, "approved positive cap and currency required"),
         (
-            not provider.endpoint or urlsplit(provider.endpoint).scheme != "https",
+            not valid_provider_endpoint(provider.endpoint),
             "owner-approved HTTPS endpoint required",
         ),
         (not provider.cleanup_supported, "bounded cleanup unsupported"),
