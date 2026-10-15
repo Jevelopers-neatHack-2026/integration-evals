@@ -39,3 +39,27 @@ def test_cli_rejects_when_receipt_has_no_results(tmp_path: Path, field: str) -> 
     result = CliRunner().invoke(app, ["inspect", str(receipt)])
     # Then an empty run is rejected without echoing raw untrusted input.
     assert result.exit_code == 1
+
+
+def test_suite_rejects_when_new_mandatory_case_is_unregistered() -> None:
+    suite = load_record(REPOSITORY / "scenarios/suite.json", Suite)
+    catalog = load_record(REPOSITORY / "fixtures/catalog.json", Catalog)
+    selection = load_record(REPOSITORY / "scenarios/selection.json", Selection)
+    incomplete = selection.model_copy(
+        update={"mandatory_case_ids": selection.mandatory_case_ids[1:]}
+    )
+    with pytest.raises(InvalidArtifactError, match="mandatory_cases_unregistered"):
+        validate_suite(suite, catalog, owned_requirements(REPOSITORY), incomplete)
+
+
+def test_suite_rejects_duplicate_mandatory_registry_entries() -> None:
+    suite = load_record(REPOSITORY / "scenarios/suite.json", Suite)
+    catalog = load_record(REPOSITORY / "fixtures/catalog.json", Catalog)
+    selection = load_record(REPOSITORY / "scenarios/selection.json", Selection)
+    duplicate = selection.model_copy(
+        update={
+            "mandatory_case_ids": (*selection.mandatory_case_ids, selection.mandatory_case_ids[0])
+        }
+    )
+    with pytest.raises(InvalidArtifactError, match="duplicate_id"):
+        validate_suite(suite, catalog, owned_requirements(REPOSITORY), duplicate)
