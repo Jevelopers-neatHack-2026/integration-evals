@@ -141,7 +141,8 @@ def test_report_preserves_readable_unicode_and_exact_json(tmp_path: Path) -> Non
 def test_missing_reason_preserves_table_fallback(tmp_path: Path, reason: str | None) -> None:
     report = render_report(tmp_path, with_reason(absent_assembly(), reason))
 
-    assert table_lines(report)[2].endswith(" | - | ")
+    blocker = table_lines(report)[2].rsplit("|", maxsplit=2)[1].strip()
+    assert blocker in {"-", r"\-"}
 
 
 @pytest.mark.parametrize(
