@@ -56,6 +56,9 @@ def test_diagnostic_cannot_create_a_successful_report_row(tmp_path: Path, separa
     assert injected not in report
     assert len(table_lines(report)) == len(original.results) + 2
     assert len(report.splitlines()) == len(render_report(tmp_path / "plain", original).splitlines())
+    assert (tmp_path / run.id / "coverage.json").read_bytes() == (
+        tmp_path / "plain" / original.id / "coverage.json"
+    ).read_bytes()
 
 
 @pytest.mark.parametrize(
