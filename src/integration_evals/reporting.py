@@ -3,6 +3,7 @@
 import json
 import re
 from decimal import Decimal
+from html import escape
 from io import BytesIO
 from pathlib import Path
 from typing import Final, Literal
@@ -47,6 +48,8 @@ __all__ = [
 _INVALID_XML_CHARACTERS: Final = re.compile(
     r"[^\x09\x0A\x0D\x20-\uD7FF\uE000-\uFFFD\U00010000-\U0010FFFF]"
 )
+_MARKDOWN_SYNTAX: Final = re.compile(r"([\\`*_{}\[\]()#+\-.!|~])")
+_LINE_BOUNDARIES: Final = re.compile(r"\r\n|[\n\r\v\f\x1c-\x1e\x85\u2028\u2029]")
 
 
 class CoverageRow(Record):
@@ -119,6 +122,12 @@ def coverage(run: Run | History, tracker: Tracker) -> tuple[CoverageRow, ...]:
 def _xml_text(value: str) -> str:
     """Replace XML-forbidden characters only in the rendered JUnit derivative."""
     return _INVALID_XML_CHARACTERS.sub("\ufffd", value)
+
+
+def _markdown_text(value: str) -> str:
+    """Keep record text inside one Markdown cell or line without changing raw records."""
+    escaped = _MARKDOWN_SYNTAX.sub(r"\\\1", escape(value, quote=False))
+    return _LINE_BOUNDARIES.sub("<br>", escaped)
 
 
 def junit(results: tuple[CaseResult, ...]) -> bytes:
@@ -205,7 +214,7 @@ def save_snapshot(  # noqa: PLR0913 - Preserve positional archive API; inventory
         junit(tuple(result for sample in history.runs for result in sample.results))
     )
     lines = [
-        f"# Evaluation run {run.id}",
+        f"# Evaluation run {_markdown_text(run.id)}",
         "",
         f"Integration revision: `{run.integration_revision}`",
         "",
@@ -216,12 +225,12 @@ def save_snapshot(  # noqa: PLR0913 - Preserve positional archive API; inventory
         " | ".join(
             (
                 "",
-                result.case_id,
-                result.outcome,
-                result.criterion_status,
-                result.mode,
-                result.cost_status,
-                result.reason or "-",
+                _markdown_text(result.case_id),
+                _markdown_text(result.outcome),
+                _markdown_text(result.criterion_status),
+                _markdown_text(result.mode),
+                _markdown_text(result.cost_status),
+                _markdown_text(result.reason or "-"),
                 "",
             )
         )
@@ -236,6 +245,6 @@ def save_snapshot(  # noqa: PLR0913 - Preserve positional archive API; inventory
             "",
         ]
     )
-    lines.extend(run.limitations)
+    lines.extend(_markdown_text(limitation) for limitation in run.limitations)
     _ = (directory / "report.md").write_text("\n".join(lines), encoding="utf-8")
     return directory
